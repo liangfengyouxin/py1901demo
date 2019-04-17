@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+{% if username %}
+<h2>{{username}}</h2>
+<br>
+{# 超级链接硬编码 #}
+{# <a href="/booktest/list/">进入列表页</a> #}
+
+{# 去除硬编码 #}
+<a href="{% url 'booktest:list' %}">进入列表页</a>
+
+
+{% else %}
+<h2>没有登录</h2>
+{% endif %}
+
+</body>
+</html>

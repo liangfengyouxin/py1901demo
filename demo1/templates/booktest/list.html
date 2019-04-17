@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>列表页</title>
+</head>
+<body>
+<h2>书籍详情</h2>
+<ul>
+    {% for book in booklist %}
+
+    {# <li> <a href="/booktest/detail/{{book.id}}">{{book.btitle}}</a>  </li> #}
+    {# 去除硬编码 #}
+    <li> <a href="{% url 'booktest:detail' book.id %}">{{book.btitle}}</a>  </li>
+
+    {% empty %}
+    <h3>没有图书信息</h3>
+    {% endfor %}
+</ul>
+
+</body>
+</html>
