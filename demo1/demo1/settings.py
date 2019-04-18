@@ -44,7 +44,8 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # csrf  是跨站请求伪造
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -113,11 +114,13 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
-LANGUAGE_CODE = 'zh-Hans'
+# LANGUAGE_CODE = 'en-us'   #指定语言
+LANGUAGE_CODE = 'zh-Hans'   #使用中文
 
-# TIME_ZONE = 'UTC'
+# TIME_ZONE = 'UTC' #指定时区
+TIME_ZONE = 'Asia/ShangHai' #中国时区
 
-USE_I18N = 'Asia/ShangHai'
+USE_I18N = True
 
 USE_L10N = True
 
@@ -128,3 +131,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]

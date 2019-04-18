@@ -11,5 +11,8 @@
 {% empty %}
 <h3>没有英雄</h3>
 {% endfor %}
+
+<br><br><br>
+<a href="{% url 'booktest:addhero' book.id %}">添加英雄</a>
 </body>
 </html>
