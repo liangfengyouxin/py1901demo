@@ -6,7 +6,7 @@
 </head>
 <body>
 <h2>书名：{{book.btitle}}</h2>
-{% for hero in book.heroinfo_set.all %}
+{% for hero in heros %}
 <h3>{{hero.hname}}-------{{hero.hcontent}}</h3>
 {% empty %}
 <h3>没有英雄</h3>

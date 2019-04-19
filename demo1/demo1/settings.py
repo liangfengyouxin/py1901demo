@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+# 项目目录的绝对路径BASE_DIR
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -56,7 +57,10 @@ ROOT_URLCONF = 'demo1.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'templates')],
+        # 'DIRS': [],
+        # 项目目录的绝对路径BASE_DIR，相当于x:xxx/py1901demo/demo1
+        # os.path.join()可以将BASE_DIR和templates拼接起来
+        'DIRS': [os.path.join(BASE_DIR,'templates')],   #设置模板文件目录
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

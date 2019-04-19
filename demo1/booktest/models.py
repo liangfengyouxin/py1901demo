@@ -15,6 +15,7 @@ class BookInfo(models.Model):
     # 出版日期，DateTimeField说明是一个日期类型
     bpub_date = models.DateTimeField(auto_now_add=True)
     def __str__(self):
+        #返回书名
         return self.btitle
 
     def xiaoshuo(self):
@@ -32,6 +33,7 @@ class HeroInfo(models.Model):
     # 关系属性对应表的字段名格式：关系属性名_id
     hbook = models.ForeignKey('BookInfo',on_delete=models.CASCADE)
     def __str__(self):
+        # 返回英雄名
         return self.hname
 
     def name(self):

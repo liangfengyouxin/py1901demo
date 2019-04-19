@@ -18,9 +18,11 @@ from django.urls import path
 from django.conf.urls import url,include
 from django.http import HttpResponse
 
+# 项目的urls文件
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    url('booktest/',include('booktest.urls',namespace='booktest'))
+    path('admin/',admin.site.urls),  #配置项目
+    #包含booktest应用中的urls文件
+    url(r'^',include('booktest.urls',namespace='booktest'))
 ]
 
 '''

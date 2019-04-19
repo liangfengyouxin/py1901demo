@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import BookInfo,HeroInfo
-
+# 后台管理相关文件
 # Register your models here.
 class HeroInfoInlines(admin.StackedInline):
     model = HeroInfo
@@ -8,14 +8,15 @@ class HeroInfoInlines(admin.StackedInline):
     extra = 1
 
 
-
+# 自定义模型管理类
 class BookInfoAdmin(admin.ModelAdmin):
-    list_display = ['xiaoshuo']
+    '''图书模型管理类'''
+    list_display = ['id','xiaoshuo','bpub_date']
     list_per_page = 5
     # 在添加书的时候，可以额外添加英雄
     inlines = [HeroInfoInlines]
 
-
+# 注册模型类
 admin.site.register(BookInfo,BookInfoAdmin)
 
 
